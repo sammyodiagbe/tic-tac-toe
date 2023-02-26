@@ -167,6 +167,34 @@ div.tictactoe-app main.main-container div.game-board-container div.board button.
   border-radius: 10px;
 }
 
+div.tictactoe-app main.main-container div.game-board-container div.status {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 1.8em;
+  text-align: center;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.status span.status {
+  padding: 1.2em;
+  color: #1a2a33;
+  border-radius: 10px;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.status span.status.user {
+  background: #31c3bd;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.status span.status.tie {
+  background: #a8bfc9;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.status span.status.opp {
+  background: #f2b137;
+}
+
 div.tictactoe-app nav.nav {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -28,9 +28,18 @@ const GameScreen = () => {
             <button className="entry"></button>
           </div>
           <div className="status">
-            <span className="status user"></span>
-            <span className="status tie"></span>
-            <span className="status opp"></span>
+            <span className="status user">
+              <p>X(You)</p>
+              <h3>14</h3>
+            </span>
+            <span className="status tie">
+              <p>Ties</p>
+              <h3>32</h3>
+            </span>
+            <span className="status opp">
+              <p>O(CPU)</p>
+              <h3>14</h3>
+            </span>
           </div>
         </div>
       </main>
