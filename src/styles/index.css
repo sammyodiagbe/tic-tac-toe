@@ -142,4 +142,46 @@ div.tictactoe-app main.main-container div.content div.action-container a:nth-chi
   -webkit-box-shadow: 0 8px 0 0px #31c3bd;
           box-shadow: 0 8px 0 0px #31c3bd;
 }
+
+div.tictactoe-app nav.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.2em 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.tictactoe-app nav.nav span.turn-indicator {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: center;
+  padding: 0.8em 1.2em;
+  background: #1f3641;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 8px 0 0px #10212a;
+          box-shadow: 0 8px 0 0px #10212a;
+}
+
+div.tictactoe-app nav.nav span.turn-indicator svg {
+  height: 20px;
+  margin-right: 10px;
+}
+
+div.tictactoe-app nav.nav span.turn-indicator svg path {
+  fill: #a8bfc9;
+}
+
+div.tictactoe-app nav.nav button.reset-button {
+  height: 50px;
+  width: 50px;
+}
 /*# sourceMappingURL=index.css.map */
