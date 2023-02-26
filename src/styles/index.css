@@ -169,6 +169,11 @@ div.tictactoe-app main.main-container div.game-board-container div.board button.
           box-shadow: 0 8px 0 0px #10212a;
 }
 
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry svg {
+  width: 50px;
+  height: auto;
+}
+
 div.tictactoe-app main.main-container div.game-board-container div.status {
   display: -ms-grid;
   display: grid;

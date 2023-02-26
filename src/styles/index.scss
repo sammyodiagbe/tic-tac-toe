@@ -154,6 +154,10 @@ div.tictactoe-app {
           background: $semi_dark_navy;
           border-radius: $border-radius;
           @include boxShadow($shadow_color);
+          svg {
+            width: 50px;
+            height: auto;
+          }
         }
       }
 

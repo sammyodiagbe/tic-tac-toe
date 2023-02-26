@@ -1,3 +1,4 @@
+import Entry from "../components/buttonComponent";
 import IconX from "../components/iconx";
 import Logo from "../components/logo";
 import RestartIcon from "../components/restartIcon";
@@ -17,15 +18,15 @@ const GameScreen = () => {
       <main className="main-container">
         <div className="game-board-container">
           <div className="board">
-            <button className="entry" data-location="0,0"></button>
-            <button className="entry" data-location="0,1"></button>
-            <button className="entry" data-location="0,2"></button>
-            <button className="entry" data-location="1,0"></button>
-            <button className="entry" data-location="1,1"></button>
-            <button className="entry" data-location="1,2"></button>
-            <button className="entry" data-location="2,0"></button>
-            <button className="entry" data-location="2,1"></button>
-            <button className="entry" data-location="2,2"></button>
+            <Entry location="0,0" />
+            <Entry location="0,1" />
+            <Entry location="0,2" />
+            <Entry location="1,0" />
+            <Entry location="1,1" />
+            <Entry location="1,2" />
+            <Entry location="2,0" />
+            <Entry location="2,1" />
+            <Entry location="2,2" />
           </div>
           <div className="status">
             <span className="status user">
