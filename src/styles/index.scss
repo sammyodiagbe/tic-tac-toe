@@ -153,6 +153,7 @@ div.tictactoe-app {
           height: 96px;
           background: $semi_dark_navy;
           border-radius: $border-radius;
+          @include boxShadow($shadow_color);
         }
       }
 
