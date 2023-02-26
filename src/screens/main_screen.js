@@ -3,7 +3,7 @@ import Logo from "../components/logo";
 
 const MainScreen = () => {
   return (
-    <main className="t-main-container">
+    <main className="main-container">
       <div className="icon-container">
         <Logo />
       </div>
