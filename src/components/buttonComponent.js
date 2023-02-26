@@ -10,24 +10,26 @@ const Entry = ({ location }) => {
   const { play, board, currentPlayer } = useContext(dataContext);
   const pos = getLocation(location);
 
-  const playToLocation = (event) => {
-    const { dataset } = event.target;
-    const { location } = dataset;
+  const playToLocation = (_) => {
     play(pos);
+  };
+
+  const Marker = () => {
+    const anchor = board[pos[0]][pos[1]];
+    if (anchor === 0) {
+      if (currentPlayer === 1) {
+        return <IconXOutline />;
+      }
+      return <IconOOutline />;
+    }
+    if (anchor === 1) {
+      return <IconX />;
+    }
+    return <IconO />;
   };
   return (
     <button className="entry" data-location={location} onClick={playToLocation}>
-      {board[pos[0]][pos[1]] !== 0 ? (
-        currentPlayer === 1 ? (
-          <IconX />
-        ) : (
-          <IconO></IconO>
-        )
-      ) : currentPlayer === 1 ? (
-        <IconXOutline />
-      ) : (
-        <IconOOutline />
-      )}
+      <Marker />
     </button>
   );
 };

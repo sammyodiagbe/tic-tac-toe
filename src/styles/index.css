@@ -169,9 +169,23 @@ div.tictactoe-app main.main-container div.game-board-container div.board button.
           box-shadow: 0 8px 0 0px #10212a;
 }
 
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry:hover svg.outline-hidden {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 div.tictactoe-app main.main-container div.game-board-container div.board button.entry svg {
   width: 50px;
   height: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry svg.outline-hidden {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
 }
 
 div.tictactoe-app main.main-container div.game-board-container div.status {
