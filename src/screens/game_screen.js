@@ -23,6 +23,9 @@ const GameScreen = () => {
             <button className="entry"></button>
             <button className="entry"></button>
             <button className="entry"></button>
+            <button className="entry"></button>
+            <button className="entry"></button>
+            <button className="entry"></button>
           </div>
           <div className="status">
             <span className="status user"></span>

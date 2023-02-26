@@ -20,6 +20,7 @@ $small-margin: 1.2em;
   margin: 0;
   outline: 0;
   box-sizing: border-box;
+  border: none;
 }
 
 @mixin boxShadow($color) {
@@ -49,6 +50,7 @@ div.tictactoe-app {
   main.main-container {
     display: flex;
     align-items: center;
+    width: 100%;
     div.content {
       width: 100%;
       div.icon-container {
@@ -137,6 +139,23 @@ div.tictactoe-app {
         }
       }
     }
+
+    // board
+    div.game-board-container {
+      flex: 1;
+      margin-top: $margin;
+      div.board {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 15px;
+        button.entry {
+          height: 96px;
+          background: $semi_dark_navy;
+          border-radius: $border-radius;
+        }
+      }
+    }
   }
 
   nav.nav {
@@ -147,13 +166,14 @@ div.tictactoe-app {
     span.turn-indicator {
       display: inline-flex;
       align-items: center;
+      color: $silver;
       vertical-align: center;
       padding: 0.8em $padding;
       background: $semi_dark_navy;
       border-radius: $border-radius;
       @include boxShadow($shadow_color);
       svg {
-        height: 20px;
+        height: 18px;
         margin-right: 10px;
         path {
           fill: $silver;
@@ -162,8 +182,15 @@ div.tictactoe-app {
     }
 
     button.reset-button {
-      height: 50px;
-      width: 50px;
+      height: 45px;
+      width: 45px;
+      border-radius: $border-radius;
+      @include boxShadow($silver);
+      background: $silver_hover;
+      svg {
+        width: 25px;
+        height: auto;
+      }
     }
   }
 }

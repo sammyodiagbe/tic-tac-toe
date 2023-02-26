@@ -5,6 +5,7 @@
   outline: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: none;
 }
 
 body,
@@ -36,6 +37,7 @@ div.tictactoe-app main.main-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 div.tictactoe-app main.main-container div.content {
@@ -143,6 +145,28 @@ div.tictactoe-app main.main-container div.content div.action-container a:nth-chi
           box-shadow: 0 8px 0 0px #31c3bd;
 }
 
+div.tictactoe-app main.main-container div.game-board-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-top: 1.8em;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.board {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 15px;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry {
+  height: 96px;
+  background: #1f3641;
+  border-radius: 10px;
+}
+
 div.tictactoe-app nav.nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,6 +187,7 @@ div.tictactoe-app nav.nav span.turn-indicator {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #a8bfc9;
   vertical-align: center;
   padding: 0.8em 1.2em;
   background: #1f3641;
@@ -172,7 +197,7 @@ div.tictactoe-app nav.nav span.turn-indicator {
 }
 
 div.tictactoe-app nav.nav span.turn-indicator svg {
-  height: 20px;
+  height: 18px;
   margin-right: 10px;
 }
 
@@ -181,7 +206,16 @@ div.tictactoe-app nav.nav span.turn-indicator svg path {
 }
 
 div.tictactoe-app nav.nav button.reset-button {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 8px 0 0px #a8bfc9;
+          box-shadow: 0 8px 0 0px #a8bfc9;
+  background: #dbe8ed;
+}
+
+div.tictactoe-app nav.nav button.reset-button svg {
+  width: 25px;
+  height: auto;
 }
 /*# sourceMappingURL=index.css.map */
