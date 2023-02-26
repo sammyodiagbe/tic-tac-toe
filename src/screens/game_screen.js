@@ -17,15 +17,15 @@ const GameScreen = () => {
       <main className="main-container">
         <div className="game-board-container">
           <div className="board">
-            <button className="entry"></button>
-            <button className="entry"></button>
-            <button className="entry"></button>
-            <button className="entry"></button>
-            <button className="entry"></button>
-            <button className="entry"></button>
-            <button className="entry"></button>
-            <button className="entry"></button>
-            <button className="entry"></button>
+            <button className="entry" data-location="0,0"></button>
+            <button className="entry" data-location="0,1"></button>
+            <button className="entry" data-location="0,2"></button>
+            <button className="entry" data-location="1,0"></button>
+            <button className="entry" data-location="1,1"></button>
+            <button className="entry" data-location="1,2"></button>
+            <button className="entry" data-location="2,0"></button>
+            <button className="entry" data-location="2,1"></button>
+            <button className="entry" data-location="2,2"></button>
           </div>
           <div className="status">
             <span className="status user">
