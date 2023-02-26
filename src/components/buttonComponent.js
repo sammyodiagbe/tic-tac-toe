@@ -7,28 +7,40 @@ import IconX from "./iconx";
 import IconXOutline from "./iconx_outline";
 
 const Entry = ({ location }) => {
-  const { play, board, currentPlayer } = useContext(dataContext);
+  const { play, board, currentPlayer, gameEnded } = useContext(dataContext);
   const pos = getLocation(location);
 
   const playToLocation = (_) => {
     play(pos);
   };
+  const anchor = board[pos[0]][pos[1]];
 
   const Marker = () => {
-    const anchor = board[pos[0]][pos[1]];
     if (anchor === 0) {
       if (currentPlayer === 1) {
         return <IconXOutline />;
       }
       return <IconOOutline />;
     }
+    if (anchor === "W") {
+      if (currentPlayer == 1) return <IconX />;
+      return <IconO />;
+    }
+
     if (anchor === 1) {
       return <IconX />;
     }
+
     return <IconO />;
   };
   return (
-    <button className="entry" data-location={location} onClick={playToLocation}>
+    <button
+      className={`entry ${gameEnded ? "ended" : ""} ${
+        anchor === "W" ? (currentPlayer === 1 ? "p-1" : "p-2") : ""
+      }`}
+      data-location={location}
+      onClick={playToLocation}
+    >
       <Marker />
     </button>
   );

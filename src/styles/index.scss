@@ -154,6 +154,29 @@ div.tictactoe-app {
           background: $semi_dark_navy;
           border-radius: $border-radius;
           @include boxShadow($shadow_color);
+
+          &.ended {
+            svg.outline-hidden {
+              display: none;
+              visibility: hidden;
+            }
+          }
+          &.p-1,
+          &.p-2 {
+            svg {
+              path {
+                fill: $dark_navy;
+              }
+            }
+          }
+          &.p-1 {
+            background: $light_blue_hover;
+            @include boxShadow($light-blue);
+          }
+          &.p-2 {
+            background: $light_yellow_hover;
+            @include boxShadow($light-yellow);
+          }
           &:hover {
             svg.outline-hidden {
               opacity: 1;

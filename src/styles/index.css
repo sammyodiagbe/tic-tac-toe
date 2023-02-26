@@ -169,6 +169,27 @@ div.tictactoe-app main.main-container div.game-board-container div.board button.
           box-shadow: 0 8px 0 0px #10212a;
 }
 
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry.ended svg.outline-hidden {
+  display: none;
+  visibility: hidden;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry.p-1 svg path, div.tictactoe-app main.main-container div.game-board-container div.board button.entry.p-2 svg path {
+  fill: #1a2a33;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry.p-1 {
+  background: #65e9e4;
+  -webkit-box-shadow: 0 8px 0 0px #31c3bd;
+          box-shadow: 0 8px 0 0px #31c3bd;
+}
+
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry.p-2 {
+  background: #ffc860;
+  -webkit-box-shadow: 0 8px 0 0px #f2b137;
+          box-shadow: 0 8px 0 0px #f2b137;
+}
+
 div.tictactoe-app main.main-container div.game-board-container div.board button.entry:hover svg.outline-hidden {
   opacity: 1;
   -webkit-transform: scale(1);
