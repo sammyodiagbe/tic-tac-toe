@@ -59,13 +59,7 @@ div.tictactoe-app div.got-a-winner div.content h4 {
   color: #fff;
 }
 
-div.tictactoe-app div.got-a-winner div.content h2.win-1 {
-  color: #31c3bd;
-}
-
-div.tictactoe-app div.got-a-winner div.content h2.win-2 {
-  color: #f2b137;
-  vertical-align: middle;
+div.tictactoe-app div.got-a-winner div.content h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,11 +71,20 @@ div.tictactoe-app div.got-a-winner div.content h2.win-2 {
           justify-content: center;
 }
 
-div.tictactoe-app div.got-a-winner div.content h2.win-2 svg {
+div.tictactoe-app div.got-a-winner div.content h2.win-1 {
+  color: #31c3bd;
+}
+
+div.tictactoe-app div.got-a-winner div.content h2 svg {
   width: 30px;
   margin: 1em 0;
   margin-right: 10px;
   height: auto;
+}
+
+div.tictactoe-app div.got-a-winner div.content h2.win-2 {
+  color: #f2b137;
+  vertical-align: middle;
 }
 
 div.tictactoe-app div.got-a-winner div.content div.button-container a,

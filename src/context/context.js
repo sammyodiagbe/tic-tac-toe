@@ -122,6 +122,9 @@ const GameProvider = ({ children }) => {
     setGameEnded(false);
     setCurrentPlayer(1);
     setPlayAs(1);
+    setTies(0);
+    setOpponentScore(0);
+    setYourScore(0);
   };
 
   const restartGame = () => {
@@ -131,6 +134,7 @@ const GameProvider = ({ children }) => {
       [0, 0, 0],
     ]);
     setGameEnded(false);
+    setCurrentPlayer(currentPlayer === 2 ? 1 : 2);
   };
 
   const quitGame = () => {
