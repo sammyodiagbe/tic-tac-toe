@@ -1,17 +1,21 @@
+import { useContext } from "react";
 import Entry from "../components/buttonComponent";
+import IconO from "../components/icono";
 import IconX from "../components/iconx";
 import Logo from "../components/logo";
 import RestartIcon from "../components/restartIcon";
+import { dataContext } from "../context/context";
 
 const GameScreen = () => {
+  const { currentPlayer, resetGame } = useContext(dataContext);
   return (
     <>
       <nav className="nav">
         <Logo />
         <span className="turn-indicator">
-          <IconX /> Turn
+          {currentPlayer === 1 ? <IconX /> : <IconO />} Turn
         </span>
-        <button className="reset-button btn">
+        <button className="reset-button btn" onClick={resetGame}>
           <RestartIcon />
         </button>
       </nav>
@@ -31,15 +35,15 @@ const GameScreen = () => {
           <div className="status">
             <span className="status user">
               <p>X(You)</p>
-              <h3>14</h3>
+              <h2>14</h2>
             </span>
             <span className="status tie">
               <p>Ties</p>
-              <h3>32</h3>
+              <h2>32</h2>
             </span>
             <span className="status opp">
               <p>O(CPU)</p>
-              <h3>14</h3>
+              <h2>14</h2>
             </span>
           </div>
         </div>

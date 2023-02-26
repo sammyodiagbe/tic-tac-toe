@@ -98,6 +98,17 @@ const GameProvider = ({ children }) => {
     }
   };
 
+  const resetGame = () => {
+    setGameBoard([
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ]);
+
+    setGameEnded(false);
+    setCurrentPlayer(1);
+  };
+
   return (
     <dataContext.Provider
       value={{
@@ -105,6 +116,7 @@ const GameProvider = ({ children }) => {
         currentPlayer,
         gameEnded,
         play,
+        resetGame,
       }}
     >
       {children}
