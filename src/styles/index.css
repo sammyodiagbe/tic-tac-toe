@@ -7,12 +7,40 @@
           box-sizing: border-box;
 }
 
-body {
-  font-size: 16px;
+body,
+html {
+  font-size: 14px;
   font-family: "Outfit", sans-serif;
 }
 
 a {
   text-decoration: none;
+}
+
+div.tictactoe-app {
+  background: #1a2a33;
+  min-height: 100vh;
+  text-transform: uppercase;
+}
+
+div.tictactoe-app main.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.2em;
+}
+
+div.tictactoe-app main.main-container div.content div.icon-container {
+  padding: 1.2em 0;
+  text-align: center;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark {
+  background: #1f3641;
+  padding: 1.2em;
+  color: #dbe8ed;
 }
 /*# sourceMappingURL=index.css.map */

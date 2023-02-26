@@ -1,3 +1,13 @@
+$dark_navy: #1a2a33;
+$semi_dark_navy: #1f3641;
+$silver: #a8bfc9;
+$silver_hover: #dbe8ed;
+$light_blue: #31c3bd;
+$light_blue_hover: #65e9e4;
+$light_yellow: #f2b137;
+$light_yellow_hover: #ffc860;
+$padding: 1.2em;
+
 @import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
 * {
   padding: 0;
@@ -6,11 +16,37 @@
   box-sizing: border-box;
 }
 
-body {
-  font-size: 16px;
+body,
+html {
+  font-size: 14px;
   font-family: "Outfit", sans-serif;
 }
 
 a {
   text-decoration: none;
+}
+
+div.tictactoe-app {
+  background: $dark_navy;
+  min-height: 100vh;
+  text-transform: uppercase;
+  main.main-container {
+    display: flex;
+    align-items: center;
+    padding: $padding;
+    div.content {
+      div.icon-container {
+        padding: $padding 0;
+        text-align: center;
+      }
+
+      div.pick-player-mark {
+        background: $semi_dark_navy;
+        padding: $padding;
+        color: $silver_hover;
+        div.marker-toggle-container {
+        }
+      }
+    }
+  }
 }
