@@ -14,7 +14,23 @@ const GameScreen = () => {
           <RestartIcon />
         </button>
       </nav>
-      <main className="main-container"></main>
+      <main className="main-container">
+        <div className="game-board-container">
+          <div className="board">
+            <button className="entry"></button>
+            <button className="entry"></button>
+            <button className="entry"></button>
+            <button className="entry"></button>
+            <button className="entry"></button>
+            <button className="entry"></button>
+          </div>
+          <div className="status">
+            <span className="status user"></span>
+            <span className="status tie"></span>
+            <span className="status opp"></span>
+          </div>
+        </div>
+      </main>
     </>
   );
 };
