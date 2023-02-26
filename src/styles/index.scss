@@ -1,5 +1,6 @@
 $dark_navy: #1a2a33;
 $semi_dark_navy: #1f3641;
+$shadow_color: #10212a;
 $silver: #a8bfc9;
 $silver_hover: #dbe8ed;
 $light_blue: #31c3bd;
@@ -7,6 +8,11 @@ $light_blue_hover: #65e9e4;
 $light_yellow: #f2b137;
 $light_yellow_hover: #ffc860;
 $padding: 1.2em;
+$border-radius: 10px;
+$margin: 1.8em;
+$button_border_radius: 15px;
+$button_padding: 1.3em;
+$small-margin: 1.2em;
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
 * {
@@ -14,6 +20,10 @@ $padding: 1.2em;
   margin: 0;
   outline: 0;
   box-sizing: border-box;
+}
+
+@mixin boxShadow($color) {
+  box-shadow: 0 8px 0 0px $color;
 }
 
 body,
@@ -26,15 +36,21 @@ a {
   text-decoration: none;
 }
 
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 div.tictactoe-app {
   background: $dark_navy;
   min-height: 100vh;
+  padding: $padding;
   text-transform: uppercase;
   main.main-container {
     display: flex;
     align-items: center;
-    padding: $padding;
     div.content {
+      width: 100%;
       div.icon-container {
         padding: $padding 0;
         text-align: center;
@@ -44,7 +60,80 @@ div.tictactoe-app {
         background: $semi_dark_navy;
         padding: $padding;
         color: $silver_hover;
+        border-radius: $border-radius;
+        margin-bottom: $margin;
+        @include boxShadow($shadow_color);
+        margin-bottom: h3, h2 {
+          text-align: center;
+          padding: $padding 0;
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: $small-margin;
+        }
+        h3 {
+          color: $silver;
+          text-align: center;
+        }
         div.marker-toggle-container {
+          margin-bottom: $small-margin;
+          input[type="checkbox"] {
+            visibility: hidden;
+          }
+
+          label {
+            height: 80px;
+            background: $dark_navy;
+            padding: 0.8em;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: $border-radius;
+            span.mark {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: $border-radius;
+
+              &.active {
+                background: $silver;
+                svg {
+                  path {
+                    fill: $dark_navy;
+                  }
+                }
+              }
+              svg {
+                height: 35px;
+                width: 35px;
+                path {
+                  fill: $silver;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      div.action-container {
+        a {
+          display: block;
+          padding: $button_padding;
+          text-align: center;
+          color: $dark_navy;
+          font-size: 1em;
+          border-radius: $button_border_radius;
+          font-weight: 1000;
+          @include boxShadow($light_yellow);
+          margin-bottom: $margin;
+          &:nth-child(1) {
+            background: $light_yellow_hover;
+            margin-bottom: 1.8em;
+          }
+
+          &:nth-child(2) {
+            background: $light_blue_hover;
+            @include boxShadow($light-blue);
+          }
         }
       }
     }

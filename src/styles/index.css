@@ -17,9 +17,15 @@ a {
   text-decoration: none;
 }
 
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 div.tictactoe-app {
   background: #1a2a33;
   min-height: 100vh;
+  padding: 1.2em;
   text-transform: uppercase;
 }
 
@@ -30,7 +36,10 @@ div.tictactoe-app main.main-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.2em;
+}
+
+div.tictactoe-app main.main-container div.content {
+  width: 100%;
 }
 
 div.tictactoe-app main.main-container div.content div.icon-container {
@@ -42,5 +51,95 @@ div.tictactoe-app main.main-container div.content div.pick-player-mark {
   background: #1f3641;
   padding: 1.2em;
   color: #dbe8ed;
+  border-radius: 10px;
+  margin-bottom: 1.8em;
+  -webkit-box-shadow: 0 8px 0 0px #10212a;
+          box-shadow: 0 8px 0 0px #10212a;
+  margin-bottom: h3, h2;
+  margin-bottom-text-align: center;
+  margin-bottom-padding: 1.2em 0;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark h2 {
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark h3 {
+  color: #a8bfc9;
+  text-align: center;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container {
+  margin-bottom: 1.2em;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container input[type="checkbox"] {
+  visibility: hidden;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label {
+  height: 80px;
+  background: #1a2a33;
+  padding: 0.8em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark.active {
+  background: #a8bfc9;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark.active svg path {
+  fill: #1a2a33;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark svg {
+  height: 35px;
+  width: 35px;
+}
+
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark svg path {
+  fill: #a8bfc9;
+}
+
+div.tictactoe-app main.main-container div.content div.action-container a {
+  display: block;
+  padding: 1.3em;
+  text-align: center;
+  color: #1a2a33;
+  font-size: 1em;
+  border-radius: 15px;
+  font-weight: 1000;
+  -webkit-box-shadow: 0 8px 0 0px #f2b137;
+          box-shadow: 0 8px 0 0px #f2b137;
+  margin-bottom: 1.8em;
+}
+
+div.tictactoe-app main.main-container div.content div.action-container a:nth-child(1) {
+  background: #ffc860;
+  margin-bottom: 1.8em;
+}
+
+div.tictactoe-app main.main-container div.content div.action-container a:nth-child(2) {
+  background: #65e9e4;
+  -webkit-box-shadow: 0 8px 0 0px #31c3bd;
+          box-shadow: 0 8px 0 0px #31c3bd;
 }
 /*# sourceMappingURL=index.css.map */
