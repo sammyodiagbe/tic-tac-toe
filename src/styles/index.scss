@@ -11,7 +11,7 @@ $padding: 1.2em;
 $border-radius: 10px;
 $margin: 1.8em;
 $button_border_radius: 15px;
-$button_padding: 1.3em;
+$button_padding: 1.1em;
 $small-margin: 1.2em;
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
@@ -21,6 +21,7 @@ $small-margin: 1.2em;
   outline: 0;
   box-sizing: border-box;
   border: none;
+  text-transform: uppercase;
 }
 
 @mixin boxShadow($color) {
@@ -33,7 +34,9 @@ html {
   font-family: "Outfit", sans-serif;
 }
 
-a {
+a,
+button {
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -47,6 +50,66 @@ div.tictactoe-app {
   min-height: 100vh;
   padding: $padding;
   text-transform: uppercase;
+
+  div.got-a-winner {
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+
+    div.content {
+      text-align: center;
+      background: $semi_dark_navy;
+      padding: 3em $padding;
+      width: 100%;
+      h4 {
+        color: #fff;
+      }
+      h2.win-1 {
+        color: $light_blue;
+      }
+      h2.win-2 {
+        color: $light-yellow;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 30px;
+          margin: 1em 0;
+          margin-right: 10px;
+          height: auto;
+        }
+      }
+
+      div.button-container {
+        a,
+        button {
+          padding: $button_padding 1.6em;
+          border-radius: $border-radius;
+          display: inline-block;
+          color: $dark_navy;
+          font-weight: bold;
+          font-size: 1em;
+        }
+
+        a {
+          background-color: $silver_hover;
+          @include boxShadow($silver);
+          margin-right: 2em;
+        }
+
+        button {
+          background-color: $light_yellow_hover;
+          @include boxShadow($light-yellow);
+        }
+      }
+    }
+  }
   main.main-container {
     display: flex;
     align-items: center;
@@ -90,7 +153,8 @@ div.tictactoe-app {
             display: grid;
             grid-template-columns: 1fr 1fr;
             border-radius: $border-radius;
-            span.mark {
+            button.mark {
+              background: transparent;
               display: flex;
               justify-content: center;
               align-items: center;

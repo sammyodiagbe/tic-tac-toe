@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Entry from "../components/buttonComponent";
 import IconO from "../components/icono";
 import IconX from "../components/iconx";
@@ -7,7 +8,18 @@ import RestartIcon from "../components/restartIcon";
 import { dataContext } from "../context/context";
 
 const GameScreen = () => {
-  const { currentPlayer, resetGame } = useContext(dataContext);
+  const navigate = useNavigate();
+  const {
+    currentPlayer,
+    resetGame,
+    gameEnded,
+    playingAs,
+    quitGame,
+    restartGame,
+    yourScore,
+    ties,
+    opponentScore,
+  } = useContext(dataContext);
   return (
     <>
       <nav className="nav">
@@ -34,20 +46,47 @@ const GameScreen = () => {
           </div>
           <div className="status">
             <span className="status user">
-              <p>X(You)</p>
-              <h2>14</h2>
+              <p>{playingAs === 1 ? "X" : "O"}(You)</p>
+              <h2>{yourScore}</h2>
             </span>
             <span className="status tie">
               <p>Ties</p>
-              <h2>32</h2>
+              <h2>{ties}</h2>
             </span>
             <span className="status opp">
-              <p>O(CPU)</p>
-              <h2>14</h2>
+              <p>{playingAs === 1 ? "O" : "X"}(CPU)</p>
+              <h2>{opponentScore}</h2>
             </span>
           </div>
         </div>
       </main>
+      {gameEnded && (
+        <div className="got-a-winner">
+          <div className="content">
+            <h4>
+              {currentPlayer !== playingAs ? "Oh no, you lost.." : "You won"}
+            </h4>
+            <h2 className={`win-${currentPlayer}`}>
+              {currentPlayer === playingAs ? <IconX /> : <IconO />} Takes the
+              round
+            </h2>
+            <div className="button-container">
+              <Link
+                to={"/"}
+                onClick={() => {
+                  quitGame();
+                  navigate("/");
+                }}
+              >
+                Quit
+              </Link>
+              <button className="btn next-round" onClick={restartGame}>
+                Next round
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

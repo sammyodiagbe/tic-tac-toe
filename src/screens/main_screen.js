@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import IconX from "../components/iconx";
 import IconO from "../components/icono";
 import Logo from "../components/logo";
+import { useContext } from "react";
+import { dataContext } from "../context/context";
 
 const MainScreen = () => {
+  const { setPlayAs, playingAs } = useContext(dataContext);
   return (
     <main className="main-container">
       <div className="content">
@@ -17,12 +20,18 @@ const MainScreen = () => {
           <div className="marker-toggle-container">
             <input type="checkbox" id="toggle" name="toggle" hidden />
             <label htmlFor="toggle">
-              <span className="mark active">
+              <button
+                className={`mark ${playingAs == 1 ? "active" : ""}`}
+                onClick={() => setPlayAs(1)}
+              >
                 <IconX />
-              </span>
-              <span className="mark">
+              </button>
+              <button
+                className={`mark ${playingAs == 2 ? "active" : ""}`}
+                onClick={() => setPlayAs(2)}
+              >
                 <IconO />
-              </span>
+              </button>
             </label>
           </div>
           <h3>Remember : X Goes First</h3>

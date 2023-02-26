@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const dataContext = createContext();
 
@@ -8,9 +9,13 @@ const GameProvider = ({ children }) => {
     [0, 0, 0],
     [0, 0, 0],
   ]);
+  const [yourScore, setYourScore] = useState(0);
+  const [opponentScore, setOpponentScore] = useState(0);
+  const [ties, setTies] = useState(0);
   const [currentPlayer, setCurrentPlayer] = useState(1);
   const [gameEnded, setGameEnded] = useState(false);
-
+  const [playingAs, setPlayAs] = useState(1);
+  const [round, setRound] = useState(0);
   const play = (pos) => {
     if (gameEnded) return;
     const x = pos[0];
@@ -87,6 +92,11 @@ const GameProvider = ({ children }) => {
           let entry = combination[pos];
           temp[entry[0]][entry[1]] = "W";
         }
+        if (currentPlayer === playingAs) {
+          setYourScore(yourScore + 1);
+        } else {
+          setOpponentScore(opponentScore + 1);
+        }
         setGameEnded(true);
         return;
       }
@@ -95,6 +105,10 @@ const GameProvider = ({ children }) => {
       setCurrentPlayer(2);
     } else {
       setCurrentPlayer(1);
+    }
+    setRound(round + 1);
+    if (round == 9) {
+      setGameEnded(true);
     }
   };
 
@@ -107,6 +121,21 @@ const GameProvider = ({ children }) => {
 
     setGameEnded(false);
     setCurrentPlayer(1);
+    setPlayAs(1);
+  };
+
+  const restartGame = () => {
+    setGameBoard([
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ]);
+    setGameEnded(false);
+  };
+
+  const quitGame = () => {
+    setTies(ties + 1);
+    resetGame();
   };
 
   return (
@@ -117,6 +146,13 @@ const GameProvider = ({ children }) => {
         gameEnded,
         play,
         resetGame,
+        playingAs,
+        setPlayAs,
+        quitGame,
+        restartGame,
+        opponentScore,
+        yourScore,
+        ties,
       }}
     >
       {children}

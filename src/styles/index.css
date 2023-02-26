@@ -6,6 +6,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: none;
+  text-transform: uppercase;
 }
 
 body,
@@ -14,7 +15,9 @@ html {
   font-family: "Outfit", sans-serif;
 }
 
-a {
+a,
+button {
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -28,6 +31,80 @@ div.tictactoe-app {
   min-height: 100vh;
   padding: 1.2em;
   text-transform: uppercase;
+}
+
+div.tictactoe-app div.got-a-winner {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+div.tictactoe-app div.got-a-winner div.content {
+  text-align: center;
+  background: #1f3641;
+  padding: 3em 1.2em;
+  width: 100%;
+}
+
+div.tictactoe-app div.got-a-winner div.content h4 {
+  color: #fff;
+}
+
+div.tictactoe-app div.got-a-winner div.content h2.win-1 {
+  color: #31c3bd;
+}
+
+div.tictactoe-app div.got-a-winner div.content h2.win-2 {
+  color: #f2b137;
+  vertical-align: middle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.tictactoe-app div.got-a-winner div.content h2.win-2 svg {
+  width: 30px;
+  margin: 1em 0;
+  margin-right: 10px;
+  height: auto;
+}
+
+div.tictactoe-app div.got-a-winner div.content div.button-container a,
+div.tictactoe-app div.got-a-winner div.content div.button-container button {
+  padding: 1.1em 1.6em;
+  border-radius: 10px;
+  display: inline-block;
+  color: #1a2a33;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+div.tictactoe-app div.got-a-winner div.content div.button-container a {
+  background-color: #dbe8ed;
+  -webkit-box-shadow: 0 8px 0 0px #a8bfc9;
+          box-shadow: 0 8px 0 0px #a8bfc9;
+  margin-right: 2em;
+}
+
+div.tictactoe-app div.got-a-winner div.content div.button-container button {
+  background-color: #ffc860;
+  -webkit-box-shadow: 0 8px 0 0px #f2b137;
+          box-shadow: 0 8px 0 0px #f2b137;
 }
 
 div.tictactoe-app main.main-container {
@@ -91,7 +168,8 @@ div.tictactoe-app main.main-container div.content div.pick-player-mark div.marke
   border-radius: 10px;
 }
 
-div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark {
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label button.mark {
+  background: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,26 +182,26 @@ div.tictactoe-app main.main-container div.content div.pick-player-mark div.marke
   border-radius: 10px;
 }
 
-div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark.active {
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label button.mark.active {
   background: #a8bfc9;
 }
 
-div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark.active svg path {
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label button.mark.active svg path {
   fill: #1a2a33;
 }
 
-div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark svg {
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label button.mark svg {
   height: 35px;
   width: 35px;
 }
 
-div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label span.mark svg path {
+div.tictactoe-app main.main-container div.content div.pick-player-mark div.marker-toggle-container label button.mark svg path {
   fill: #a8bfc9;
 }
 
 div.tictactoe-app main.main-container div.content div.action-container a {
   display: block;
-  padding: 1.3em;
+  padding: 1.1em;
   text-align: center;
   color: #1a2a33;
   font-size: 1em;
