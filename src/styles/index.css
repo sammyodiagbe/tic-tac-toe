@@ -286,17 +286,6 @@ div.tictactoe-app main.main-container div.game-board-container div.board button.
           transform: scale(1);
 }
 
-div.tictactoe-app main.main-container div.game-board-container div.board button.entry.filled svg {
-  -webkit-animation-name: bounce-in;
-          animation-name: bounce-in;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
 div.tictactoe-app main.main-container div.game-board-container div.board button.entry svg {
   width: 50px;
   height: auto;

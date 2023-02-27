@@ -260,12 +260,12 @@ div.tictactoe-app {
           }
 
           &.filled {
-            svg {
-              animation-name: bounce-in;
-              animation-duration: 0.4s;
-              animation-delay: 0.2s;
-              animation-fill-mode: forwards;
-            }
+            // svg {
+            //   animation-name: bounce-in;
+            //   animation-duration: 0.4s;
+            //   animation-delay: 0.2s;
+            //   animation-fill-mode: forwards;
+            // }
           }
           svg {
             width: 50px;
