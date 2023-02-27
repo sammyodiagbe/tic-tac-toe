@@ -271,7 +271,6 @@ div.tictactoe-app {
             width: 50px;
             height: auto;
             transition: all 0.3s;
-            transform: scale(0);
 
             &.outline-hidden {
               transform: scale(0);
