@@ -1,0 +1,12 @@
+@media screen and (min-width: 768px) {
+  div.tictactoe-app {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div.container {
+      width: 450px;
+    }
+  }
+}

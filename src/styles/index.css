@@ -378,4 +378,23 @@ div.tictactoe-app nav.nav button.reset-button svg {
   width: 25px;
   height: auto;
 }
+
+@media screen and (min-width: 768px) {
+  div.tictactoe-app {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  div.tictactoe-app div.container {
+    width: 450px;
+  }
+}
 /*# sourceMappingURL=index.css.map */

@@ -64,7 +64,7 @@ const GameScreen = () => {
           </div>
         </div>
       </main>
-      {gameEnded && (
+      {(gameEnded || restartMenu) && (
         <div className="got-a-winner">
           <div className="content">
             {gameEnded && (
@@ -89,12 +89,19 @@ const GameScreen = () => {
                     to={"/"}
                     onClick={() => {
                       quitGame();
+                      restartGame(false);
                       navigate("/");
                     }}
                   >
                     Quit
                   </Link>
-                  <button className="btn next-round" onClick={restartGame}>
+                  <button
+                    className="btn next-round"
+                    onClick={() => {
+                      showRestartMenu(false);
+                      restartGame();
+                    }}
+                  >
                     Next round
                   </button>
                 </div>
@@ -111,7 +118,13 @@ const GameScreen = () => {
                   >
                     No, Cancel
                   </button>
-                  <button className="btn next-round" onClick={restartGame}>
+                  <button
+                    className="btn next-round"
+                    onClick={() => {
+                      showRestartMenu(false);
+                      restartGame();
+                    }}
+                  >
                     Yes, Restart
                   </button>
                 </div>

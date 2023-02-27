@@ -8,10 +8,12 @@ function App() {
     <GameProvider>
       <Router>
         <div className="tictactoe-app">
-          <Routes>
-            <Route path="/" element={<MainScreen />} />
-            <Route path="/game" element={<GameScreen />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<MainScreen />} />
+              <Route path="/game" element={<GameScreen />} />
+            </Routes>
+          </div>
         </div>
       </Router>
     </GameProvider>
