@@ -15,7 +15,8 @@ const GameProvider = ({ children }) => {
   const [currentPlayer, setCurrentPlayer] = useState(1);
   const [gameEnded, setGameEnded] = useState(false);
   const [playingAs, setPlayAs] = useState(1);
-  const [round, setRound] = useState(0);
+  const [round, setRound] = useState(1);
+  const [roundTied, setRoundTied] = useState(false);
   const play = (pos) => {
     if (gameEnded) return;
     const x = pos[0];
@@ -107,8 +108,10 @@ const GameProvider = ({ children }) => {
       setCurrentPlayer(1);
     }
     setRound(round + 1);
-    if (round == 9) {
+    if (round === 9) {
       setGameEnded(true);
+      setRoundTied(true);
+      setTies(ties + 1);
     }
   };
 
@@ -125,6 +128,7 @@ const GameProvider = ({ children }) => {
     setTies(0);
     setOpponentScore(0);
     setYourScore(0);
+    setRoundTied(false);
   };
 
   const restartGame = () => {
@@ -135,6 +139,8 @@ const GameProvider = ({ children }) => {
     ]);
     setGameEnded(false);
     setCurrentPlayer(currentPlayer === 2 ? 1 : 2);
+    setRoundTied(false);
+    setRound(1);
   };
 
   const quitGame = () => {
@@ -157,6 +163,7 @@ const GameProvider = ({ children }) => {
         opponentScore,
         yourScore,
         ties,
+        roundTied,
       }}
     >
       {children}

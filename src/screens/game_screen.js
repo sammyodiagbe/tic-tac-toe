@@ -12,7 +12,7 @@ const GameScreen = () => {
   const [restartMenu, showRestartMenu] = useState(false);
   const {
     currentPlayer,
-    resetGame,
+    roundTied,
     gameEnded,
     playingAs,
     quitGame,
@@ -64,57 +64,62 @@ const GameScreen = () => {
           </div>
         </div>
       </main>
-      {gameEnded ||
-        (restartMenu && (
-          <div className="got-a-winner">
-            <div className="content">
-              {gameEnded && (
-                <>
-                  <h4>
-                    {currentPlayer !== playingAs
-                      ? "Oh no, you lost.."
-                      : "You won"}
-                  </h4>
-                  <h2 className={`win-${currentPlayer}`}>
-                    {currentPlayer === playingAs ? <IconX /> : <IconO />} Takes
-                    the round
-                  </h2>
-                  <div className="button-container">
-                    <Link
-                      to={"/"}
-                      onClick={() => {
-                        quitGame();
-                        navigate("/");
-                      }}
-                    >
-                      Quit
-                    </Link>
-                    <button className="btn next-round" onClick={restartGame}>
-                      Next round
-                    </button>
-                  </div>
-                </>
-              )}
+      {gameEnded && (
+        <div className="got-a-winner">
+          <div className="content">
+            {gameEnded && (
+              <>
+                {roundTied ? (
+                  <h2>Round tied</h2>
+                ) : (
+                  <>
+                    <h4>
+                      {currentPlayer !== playingAs
+                        ? "Oh no, you lost.."
+                        : "You won"}
+                    </h4>
+                    <h2 className={`win-${currentPlayer}`}>
+                      {currentPlayer === playingAs ? <IconX /> : <IconO />}{" "}
+                      Takes the round
+                    </h2>
+                  </>
+                )}
+                <div className="button-container">
+                  <Link
+                    to={"/"}
+                    onClick={() => {
+                      quitGame();
+                      navigate("/");
+                    }}
+                  >
+                    Quit
+                  </Link>
+                  <button className="btn next-round" onClick={restartGame}>
+                    Next round
+                  </button>
+                </div>
+              </>
+            )}
 
-              {restartMenu && (
-                <>
-                  <h2>Restart Game ? </h2>
-                  <div className="button-container">
-                    <button
-                      className="cancel"
-                      onClick={() => showRestartMenu(false)}
-                    >
-                      No, Cancel
-                    </button>
-                    <button className="btn next-round" onClick={restartGame}>
-                      Yes, Restart
-                    </button>
-                  </div>
-                </>
-              )}
-            </div>
+            {restartMenu && (
+              <>
+                <h2>Restart Game ? </h2>
+                <div className="button-container">
+                  <button
+                    className="cancel"
+                    onClick={() => showRestartMenu(false)}
+                  >
+                    No, Cancel
+                  </button>
+                  <button className="btn next-round" onClick={restartGame}>
+                    Yes, Restart
+                  </button>
+                </div>
+              </>
+            )}
           </div>
-        ))}
+        </div>
+      )}
     </>
   );
 };
