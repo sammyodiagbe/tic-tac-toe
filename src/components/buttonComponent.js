@@ -37,7 +37,7 @@ const Entry = ({ location }) => {
     <button
       className={`entry ${gameEnded ? "ended" : ""} ${
         anchor === "W" ? (currentPlayer === 1 ? "p-1" : "p-2") : ""
-      }`}
+      } ${anchor !== 0 ? "filled" : ""}`}
       data-location={location}
       onClick={playToLocation}
     >

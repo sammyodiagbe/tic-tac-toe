@@ -286,11 +286,24 @@ div.tictactoe-app main.main-container div.game-board-container div.board button.
           transform: scale(1);
 }
 
+div.tictactoe-app main.main-container div.game-board-container div.board button.entry.filled svg {
+  -webkit-animation-name: bounce-in;
+          animation-name: bounce-in;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 div.tictactoe-app main.main-container div.game-board-container div.board button.entry svg {
   width: 50px;
   height: auto;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 div.tictactoe-app main.main-container div.game-board-container div.board button.entry svg.outline-hidden {
@@ -377,6 +390,60 @@ div.tictactoe-app nav.nav button.reset-button {
 div.tictactoe-app nav.nav button.reset-button svg {
   width: 25px;
   height: auto;
+}
+
+@-webkit-keyframes bounce-in {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  30% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  50% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  30% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  50% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 @media screen and (min-width: 768px) {

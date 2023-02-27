@@ -258,10 +258,21 @@ div.tictactoe-app {
               transform: scale(1);
             }
           }
+
+          &.filled {
+            svg {
+              animation-name: bounce-in;
+              animation-duration: 0.4s;
+              animation-delay: 0.2s;
+              animation-fill-mode: forwards;
+            }
+          }
           svg {
             width: 50px;
             height: auto;
             transition: all 0.3s;
+            transform: scale(0);
+
             &.outline-hidden {
               transform: scale(0);
               opacity: 0;
@@ -330,6 +341,31 @@ div.tictactoe-app {
         height: auto;
       }
     }
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(0.4);
+  }
+
+  50% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
